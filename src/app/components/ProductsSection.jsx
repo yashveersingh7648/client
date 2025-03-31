@@ -13,30 +13,37 @@ const products = [
   {
     title: "Conduit Pipes",
     image: "/Images/cundutpipes.jpg",
-    description: "uPVC Conduit Pipes for cable routing, providing protection from shocks and mechanical stress.",
+    description: "TMT Plus uPVC Conduit Pipes ensure safe cable routing, protecting against shocks, stress, and abrasions, offering durability for residential, industrial, and commercial applications.",
     link: "/conduit-pipes/",
-    bgColor: "bg-gradient-to-r from-blue-500 to-blue-700"
+    bgColor: "bg-gradient-to-r from-yellow-500 to-yellow-700"
   },
   {
     title: "Water Tanks",
     image: "/Images/watetank.jpeg",
-    description: "Premium water tanks made with 100% virgin raw material using rotomold technology.",
+    description: "TMT Plus offers durable PVC water tanks made from 100% virgin LLDPE, ensuring safe, fresh, and reliable water storage solutions.",
     link: "/water-tanks/",
-    bgColor: "bg-gradient-to-r from-green-500 to-green-700"
+    bgColor: "bg-gradient-to-r from-blue-500 to-blue-700"
   },
   {
     title: "Metal Boxes & Accessories",
-    image: "/wp-content/uploads/2022/06/product4.png",
-    description: "Ideal for electrical installations in residential and commercial properties.",
+    image: "/Images/matelBoxes.png",
+    description: "TMT Plus Metal Boxes & Accessories offer durable, certified solutions for residential and commercial electrical installations, ensuring safety and reliability.",
     link: "/metal-boxes-accessories/",
     bgColor: "bg-gradient-to-r from-yellow-500 to-yellow-700"
   },
   {
     title: "uPVC Pipes and Fittings",
-    image: "/wp-content/uploads/2022/06/product1.png",
-    description: "Leakproof and uninterrupted water supply to farms and buildings.",
+    image: "/Images/PipeFitting.png",
+    description: "TMT Plus cPVC Pipes offer superior durability and temperature resistance, ensuring reliable plumbing performance for hot water applications.",
     link: "/upvc-pipes-and-fittings/",
-    bgColor: "bg-gradient-to-r from-purple-500 to-purple-700"
+    bgColor: "bg-gradient-to-r from-blue-500 to-blue-700"
+  },
+  {
+    title: "uPVC casing & capping pipes",
+    image: "/Images/casingcappingpipes.png",
+    description: "TMT Plus uPVC Casing & Capping Pipes ensure durable, certified protection for electrical wiring in homes and commercial buildings, offering reliable performance.",
+    link: "/upvc-pipes-and-fittings/",
+    bgColor: "bg-gradient-to-r from-yellow-500 to-yellow-700"
   }
 ];
 
@@ -45,7 +52,7 @@ const ProductsSection = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-blue-600 font-semibold text-lg">Projects</span>
+          <span className="text-blue-500 font-semibold text-6xl">Projects</span>
           <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">
             Products We Provide
           </h2>
@@ -76,7 +83,7 @@ const ProductsSection = () => {
               <div
                 className={`relative overflow-hidden rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300 ${product.bgColor}`}
               >
-                <div className="relative h-64">
+                <div className="relative h-64 bg-white">
                   <Image
                     src={product.image}
                     alt={product.title}
@@ -93,7 +100,7 @@ const ProductsSection = () => {
                   </h3>
                   <p className="mb-4">{product.description}</p>
                   <Link 
-                    href={product.link}
+                    href="/Products"
                     className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors"
                   >
                     Learn More

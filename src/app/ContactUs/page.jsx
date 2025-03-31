@@ -23,7 +23,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-gray-50 py-20 mt-5">
       <div className="container mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-12">

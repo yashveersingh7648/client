@@ -66,7 +66,7 @@ const ProjectSlider = () => {
     <section className="bg-gray-100 py-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h4 className="text-lg text-orange-500 font-semibold">Projects</h4>
+          <h4 className=" text-blue-500 font-semibold text-6xl pb-5">Projects</h4>
           <h2 className="text-4xl font-bold">Solutions and Projects</h2>
           <p className="text-gray-600 mt-4">High-quality products for industrial, commercial, and corporate clients.</p>
         </div>

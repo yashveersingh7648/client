@@ -10,7 +10,7 @@ const AboutSection = () => {
               {/* Content */}
           <div className="w-full lg:w-1/2">
             <div className="max-w-lg mx-auto lg:mx-0">
-              <span className="text-blue-600 font-semibold">About </span>
+              <span className="text-blue-600 font-semibold text-6xl">About </span>
               <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
                 TMT Polymers India Pvt Ltd.
               </h2>
@@ -20,7 +20,7 @@ With a strong reputation built over the years, Fine Engineering Work takes pride
 
               </p>
               <Link 
-                href="/about-us" 
+                href="/AboutTMTPlus" 
                 className="inline-block px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg"
               >
                 Learn More

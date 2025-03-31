@@ -161,7 +161,7 @@ const ImageCarousel = () => {
             />
             
             {/* Text overlay */}
-            <div className="relative inset-0 bg-black/30 flex items-center justify-center h-[60vh] md:h-[80vh]  top-10">
+            <div className="relative inset-0 bg-black/30 flex items-center justify-center h-[60vh] md:h-[80vh] ">
               <div className="text-center px-4 max-w-4xl mx-auto text-white">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">
                   {slide.title}
