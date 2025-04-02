@@ -43,7 +43,7 @@ const TrustedSection = () => {
           
           {/* Text Section */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">TMT Plus – The Most Trusted</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-6"> Fine Engineering Work – The Most Trusted</h2>
             <p className="text-gray-600 leading-relaxed mb-8">
               Since 1960, TMT Plus has been a pioneer in the uPVC pipes and tanks industry. With a legacy of delivering 
               high-quality products, we continue to evolve with advanced manufacturing, certified quality, and a 

@@ -11,7 +11,7 @@ const ProjectSlider = () => {
       title: "Agriculture",
       description:  (
         <>
-          TMT Plus offers <br />
+           Fine Engineering Work offers <br />
           top-quality agricultural water pipes and fittings in North India, <br />
           ensuring a leak-proof and uninterrupted water supply for your farms.
         </>
@@ -23,7 +23,7 @@ const ProjectSlider = () => {
       title: "Hospitality",
       description: (
         <>
-          TMT Plus provides <br />
+           Fine Engineering Work provides <br />
           best-quality 7-layer water tanks in Punjab, <br />
           ideal for safe and reliable water storage in hospitals.
         </>
@@ -35,7 +35,7 @@ const ProjectSlider = () => {
       title: "Real Estate",
       description:  (
         <>
-          TMT Plus is a leading manufacturer of <br />
+          Fine Engineering Work is a leading manufacturer of <br />
           best-quality uPVC electrical conduit pipes and fittings in North India, <br />
           widely used in residential and commercial spaces <br />
           for carrying electric wires.

@@ -12,7 +12,7 @@ const AboutSection = () => {
             <div className="max-w-lg mx-auto lg:mx-0">
               <span className="text-blue-600 font-semibold text-6xl">About </span>
               <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
-                TMT Polymers India Pvt Ltd.
+              Fine Engineering Work India Pvt Ltd.
               </h2>
               <p className="text-lg text-gray-600 mb-8">
               Fine Engineering Work is a trusted distributor of high-quality polymer products under the renowned brand TMT Plus. Based in Aligarh, we are committed to delivering durable and efficient solutions to our customers. Since our establishment, we have focused on providing top-notch products at competitive prices, ensuring customer satisfaction through reliability and excellence.
@@ -32,7 +32,7 @@ With a strong reputation built over the years, Fine Engineering Work takes pride
             <div className="grid grid-cols-2 gap-4">
               <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/Images/Tmt1.jpeg"
+                  src="/Images/Tmt1.jpg"
                   alt="TMT Plus manufacturing facility"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"

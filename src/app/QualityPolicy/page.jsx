@@ -4,6 +4,9 @@ import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 
+import WhatsAppButton from "@/app/components/WhatsAppButton"
+
+
 export default function QualityPage() {
   return (
     <>
@@ -12,15 +15,15 @@ export default function QualityPage() {
         <meta name="description" content="Learn about TMT Plus's commitment to quality, manufacturing standards, and diverse product mix." />
       </Head>
 
-      <main className="bg-gray-100 text-gray-800">
-        {/* Breadcrumb Section */}
-        <section className="bg-cover bg-center text-white py-20 relative text-center h-130 " style={{ backgroundImage: `url(https://www.tmtplus.co.in/wp-content/uploads/2025/01/quaility-breadcrumb.jpg)` }}>
+      <main className="bg-gray-100 text-gray-800  ">
+        {/* Breadcrumb Section */} 
+        <section className="bg-cover bg-center text-white py-20 relative text-center h-100 top-25 mb-20" style={{ backgroundImage: `url(/Images/QuiltyPolocy.jpg)` }}>
           <div className="container mx-auto">
-            <h1 className="text-4xl font-bold pt-40">Quality Policy</h1>
+            <h1 className="text-4xl font-bold pt-15 text-black">Quality Policy</h1>
             <nav className="flex justify-center mt-4">
-              <a href="#" className="text-white-300 hover:text-orange-400">Home</a>
+              <a href="/" className="text-white-300 hover:text-orange-400 text-black">Home</a>
               <span className="mx-2">/</span>
-              <span className="text-white-400">Quality Policy</span>
+              <span className=" text-black">Quality Policy</span>
             </nav>
           </div>
         </section>
@@ -55,11 +58,11 @@ export default function QualityPage() {
         <section className="bg-sky-800 py-20">
         <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Product Mix</h2>
+              <h2 className="text-3xl font-bold mb-6 text-white">Product Mix</h2>
               <p className="leading-relaxed mb-4 text-white">
                 Our diverse product range includes **uPVC Pipes & Fittings** for **Electrical, Plumbing, and Agricultural** applications, along with **uPVC Casing & Capping**, bends, and plastic storage tanks.
               </p>
-              <a href="https://www.tmtplus.co.in/casing-capping/" target="_blank" className="text-blue-500 hover:text-blue-700 underline">Explore our product range →</a>
+              {/* <a href="https://www.tmtplus.co.in/casing-capping/" target="_blank" className="text-blue-500 hover:text-blue-700 underline">Explore our product range →</a> */}
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
@@ -98,6 +101,8 @@ export default function QualityPage() {
           </div>
         </section>
       </main>
+      <WhatsAppButton />
+      
     </>
   );
 }

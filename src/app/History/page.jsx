@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { useTheme } from 'next-themes'; // Tailwind Dark Mode Support
 
+import WhatsAppButton from "@/app/components/WhatsAppButton"
+
+
 export default function HistoryPage() {
   const { theme } = useTheme();
 
@@ -14,25 +17,19 @@ export default function HistoryPage() {
 
   return (
     <>
+      <WhatsAppButton />
+
       <Head>
         <title>Our History | TMT Plus</title>
         <meta name="description" content="Learn about our journey from 1960 to becoming a leader in uPVC pipes and tanks manufacturing" />
       </Head>
 
-      <main className={theme === 'dark' ? 'bg-white text-black' : ''}>
+      <main className={theme === 'dark' ? 'bg-white text-black' : ''} >
         {/* Breadcrumb Section */}
         <section 
-          className="breadcrumb-section bg-cover bg-center text-white relative text-center py-20 h-150 mt-5"
-          style={{ backgroundImage: `url(https://www.tmtplus.co.in/wp-content/uploads/2025/01/history-breadcrumb1.jpg)` }}
+          className="breadcrumb-section bg-cover bg-center text-white relative text-center py-20 h-100 top-20 mb-10 "
+          style={{ backgroundImage: `url(/Images/Histroy.png)`}}
         >
-          <div className="container mx-auto">
-            <h1 className="text-4xl font-bold pt-50">Our History</h1>
-            <nav className="flex justify-center mt-4">
-              <a href="#" className="text-white-300 hover:text-orange-400">Home</a>
-              <span className="mx-2">/</span>
-              <span className="text-white-400">Our History</span>
-            </nav>
-          </div>
         </section>
 
         {/* History Content Section */}

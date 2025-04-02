@@ -4,13 +4,15 @@ import AboutSection from "@/app/components/AboutSection"
 import TrustedSection from "./components/TrustedSection";
 
 import ProductsSection from "@/app/components/ProductsSection"
-import AppDownloadSection from "@/app/components/AppDownloadSection"
+import KnowMoreSection from "@/app/components/KnowMoreSection"
+
+import WhatsAppButton from "@/app/components/WhatsAppButton"
 
 export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section - Full Width Carousel */}
-      <div className="w-full relative mt-5">
+      <div className="w-full relative pt-5">
         <Carousel />
       </div>
 
@@ -20,8 +22,8 @@ export default function Home() {
        {/* <SolutionsSection/> */}
        <TrustedSection/>
        <ProductsSection/>
-       <AppDownloadSection/>
-
+       <KnowMoreSection/>
+<WhatsAppButton />
       </main>
     </div>
   );

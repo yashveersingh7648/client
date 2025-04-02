@@ -93,6 +93,20 @@ const Navbar = () => {
     //     },
     //   ],
     // },
+    Products: {
+      label: "Products",
+      items: [
+        { name: "Conduit Pipes", link: "/Products#id1" },
+        // { name: "Our Management", link: "/management" },
+        { name: "Water Tanks",  link: "/Products#id6"  },
+        // { name: "Certification", link: "/certification" },
+        { name: "Casing & Capping", link: "/Products#id8" },
+        // { name: "Our Clients", link: "/clients" }
+        { name: "Corrugated Pipes", link: "/Products#id12" },
+        { name: "Metal Boxes & Accessories", link: "/Products#id9" },
+
+      ],
+    },
   };
 
   return (
@@ -106,11 +120,11 @@ const Navbar = () => {
               <div className="flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-6 mb-2 md:mb-0 text-sm">
                 <a href="mailto:contact@tmtplus.com" className="flex items-center space-x-2 hover:text-blue-600">
                   <FaEnvelope />
-                  <span>contact@tmtplus.com</span>
+                  <span>info@finetmtplus.com</span>
                 </a>
-                <a href="tel:+911234567890" className="flex items-center space-x-2 hover:text-blue-600">
+                <a href="tel:+918447490707" className="flex items-center space-x-2 hover:text-blue-600">
                   <FaPhone />
-                  <span>+91 12345 67890</span>
+                  <span>+91 8447490707</span>
                 </a>
               </div>
 
@@ -137,7 +151,7 @@ const Navbar = () => {
                 >
                   {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
                 </button>
-                <Link href="/contact" className="bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700">
+                <Link href="/ContactUs" className="bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700">
                   Get a Quote
                 </Link>
               </div>
@@ -147,7 +161,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Header Section */}
-      <header className={`shadow-md ${isDarkMode ? "bg-gray-800" : "bg-sky-800"} md:mt-6 fixed w-full z-40 text-white`}>
+      <header className={`shadow-md ${isDarkMode ? "bg-gray-800" : "bg-sky-800"} md:mt-6 fixed w-full z-40 text-white pt-5`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
@@ -191,6 +205,30 @@ const Navbar = () => {
                 </div>
               </div>
 
+
+              <div className="relative group">
+                <button
+                  onClick={() => handleDropdown("products")}
+                  className="flex items-center space-x-1 hover:text-blue-300 py-6"
+                  aria-expanded={dropdowns.products}
+                >
+                  <span>Products</span>
+                  <FaChevronDown className={`transition-transform ${dropdowns.products ? "rotate-180" : ""}`} />
+                </button>
+                <div
+                  className={`absolute top-full left-0 w-48 bg-white dark:bg-gray-700 shadow-lg rounded-md py-2 z-50 ${dropdowns.products ? "block" : "hidden"}`}
+                >
+                  {menuItems.Products.items.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.link}
+                      className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               {/* Products Mega Menu */}
               {/* <div className="relative group">
                 <button
@@ -224,7 +262,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </div> */}
-              <Link href="/Products" className="hover:text-blue-300 py-6">Products</Link>
+              {/* <Link href="/Products" className="hover:text-blue-300 py-6">Products</Link> */}
 
               {/* Other Links */}
               {/* <Link href="/gallery" className="hover:text-blue-300 py-6">Gallery</Link> */}
@@ -346,7 +384,7 @@ const Navbar = () => {
 
             {/* Mobile Get Quote Button */}
             <Link 
-              href="/contact" 
+              href="/ContactUs" 
               className="block mt-6 bg-blue-600 text-white px-4 py-2 rounded text-center hover:bg-blue-700"
               onClick={() => setIsMobileMenuOpen(false)}
             >

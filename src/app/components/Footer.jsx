@@ -20,18 +20,18 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-blue-400 transition"
               >
-                <strong>Factory:</strong> G T Road, Near New Vegetable Market, Ambala
+                <strong>Address:</strong> RUSTAMPUR SAKET KHA SHREE DHAM; COLONY Aligarh
               </a>
             </p>
             <p>
-              <a
+              {/* <a
                 href="https://maps.app.goo.gl/e2E7K5cZBAp6aZLMA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-400 transition"
               >
                 <strong>Corp Off:</strong> 669, 1st Floor, Sector -82, JLPL, Mohali 140308
-              </a>
+              </a> */}
             </p>
           </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
             </h5>
             <p>
               <a href="mailto:info@tmtplus.co.in" className="hover:text-blue-400 transition">
-                info@tmtplus.co.in
+              info@finetmtplus.com
               </a>
             </p>
           </div>
@@ -53,12 +53,12 @@ const Footer = () => {
               <FaPhoneAlt className="mr-2" /> Our Phone
             </h5>
             <p>
-              <a href="tel:+918607999555" className="hover:text-blue-400 transition">
+              {/* <a href="tel:+918607999555" className="hover:text-blue-400 transition">
                 +91 8607999555
-              </a>
+              </a> */}
               <span className="mx-2">|</span>
               <a href="tel:+919053912349" className="hover:text-blue-400 transition">
-                +91 9053912349
+                +91 8447490707
               </a>
             </p>
           </div>
@@ -70,15 +70,15 @@ const Footer = () => {
         {/* Navigation */}
         <div className="flex justify-center flex-wrap gap-6">
           {[
-            { label: "Home", link: "https://www.tmtplus.co.in/", icon: <FaMapMarkerAlt /> },
-            { label: "Quality Policy", link: "https://www.tmtplus.co.in/quality-policy/", icon: <FaEnvelope /> },
-            { label: "Gallery", link: "https://www.tmtplus.co.in/gallery/", icon: <FaPhoneAlt /> },
-            { label: "Become a Dealer", link: "https://www.tmtplus.co.in/become-a-dealer/", icon: <FaMapMarkerAlt /> },
-            { label: "FAQ", link: "https://www.tmtplus.co.in/frequently-asked-questions/", icon: <FaEnvelope /> },
-            { label: "Career", link: "https://www.tmtplus.co.in/career/", icon: <FaPhoneAlt /> },
-            { label: "Our Clients", link: "https://www.tmtplus.co.in/our-clients/", icon: <FaMapMarkerAlt /> },
-            { label: "Blog", link: "https://www.tmtplus.co.in/blog/", icon: <FaEnvelope /> },
-            { label: "Contact Us", link: "https://www.tmtplus.co.in/contact-us/", icon: <FaPhoneAlt /> },
+            { label: "Home", link: "/", icon: <FaMapMarkerAlt /> },
+            { label: "Quality Policy", link: "/QualityPolicy", icon: <FaEnvelope /> },
+            // { label: "Gallery", link: "/", icon: <FaPhoneAlt /> },
+            { label: "Become a Dealer", link: "/Dealership", icon: <FaMapMarkerAlt /> },
+            { label: "FAQ", link: "/FAQItem", icon: <FaEnvelope /> },
+            // { label: "Career", link: "https://www.tmtplus.co.in/career/", icon: <FaPhoneAlt /> },
+            // { label: "Our Clients", link: "https://www.tmtplus.co.in/our-clients/", icon: <FaMapMarkerAlt /> },
+            // { label: "Blog", link: "https://www.tmtplus.co.in/blog/", icon: <FaEnvelope /> },
+            { label: "Contact Us", link: "/ContactUs", icon: <FaPhoneAlt /> },
           ].map((item, index) => (
             <a
               key={index}
@@ -117,10 +117,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        
 
         {/* Copyright */}
-        <div className="text-center text-sm">
+        {/* <div className="text-center text-sm">
           <p>
             Copyright 2025 TMT PLUS. All Rights Reserved | 
             <a href="/privacy-policy/" className="text-blue-400 mx-1">Privacy Policy</a> | 
@@ -136,7 +136,7 @@ const Footer = () => {
               MANTRIN
             </a>
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

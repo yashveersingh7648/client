@@ -52,7 +52,7 @@ const ProductsSection = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-blue-500 font-semibold text-6xl">Projects</span>
+          <span className="text-blue-500 font-semibold text-6xl">Product</span>
           <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">
             Products We Provide
           </h2>

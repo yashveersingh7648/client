@@ -4,13 +4,17 @@ import Image from 'next/image';
 // import Link from 'next/link';
 import { FaLightbulb, FaGlobeAmericas, FaChartLine, FaUsers, FaHandshake } from 'react-icons/fa';
 
+import WhatsAppButton from "@/app/components/WhatsAppButton"
+
+
 // Reusable Card Component
+
 const ValueCard = ({ icon, title, description, colorClass }) => (
   <div className={`p-8 rounded-xl shadow-lg transition-all hover:shadow-xl ${colorClass}`}>
     <div className="flex flex-col items-center text-center h-full">
       <div className="text-4xl mb-5">{icon}</div>
       <h3 className="text-2xl font-bold mb-4">{title}</h3>
-      <p className="text-lg">{description}</p>
+      <div className="text-lg">{description}</div>
     </div>
   </div>
 );
@@ -40,7 +44,14 @@ const OptimizedImage = ({ src, alt, className = "" }) => (
 const CompanyValues = () => {
   return (
     <>
-     <section className="py-16 bg-gray-50 pt-40 mt-5">
+        <WhatsAppButton />
+    
+    <div  className="breadcrumb-section bg-cover bg-center text-white relative text-center py-20 h-100  opacity-70 top-30 mb-20"
+style={{ backgroundImage: `url(/Images/about.jpg)` }}
+>
+</div>
+
+     <section className="py-16 bg-gray-50 pt-20 ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
 
@@ -49,7 +60,7 @@ const CompanyValues = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/Images/Tmt1.jpeg"
+                  src="/Images/Tmt1.jpg"
                   alt="TMT Plus manufacturing facility"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
@@ -72,7 +83,7 @@ const CompanyValues = () => {
             <div className="max-w-lg mx-auto lg:mx-0">
               <span className="text-blue-600 font-semibold text-6xl">About </span>
               <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
-                TMT Polymers India Pvt Ltd.
+              Fine Engineering Work India Pvt Ltd.
               </h2>
               <p className="text-lg text-gray-600 mb-8">
               Fine Engineering Work is a trusted distributor of high-quality polymer products under the renowned brand TMT Plus. Based in Aligarh, we are committed to delivering durable and efficient solutions to our customers. Since our establishment, we have focused on providing top-notch products at competitive prices, ensuring customer satisfaction through reliability and excellence.
@@ -101,10 +112,13 @@ With a strong reputation built over the years, Fine Engineering Work takes pride
               icon={<FaLightbulb className="text-yellow-500" />}
               title="Our Vision"
               description={
-                <>
-                <p className="mb-3">"To deliver high-quality, affordable, and easy-to-install products, enhancing everyday convenience and safety for society."</p> <p className="mb-3">"To lead in Electrical & Sanitary Piping solutions by offering superior quality, innovation, and exceptional service."</p> <p>"To foster growth for all stakeholders – Customers, Partners, Shareholders, Employees, and Society through trust and excellence."</p> </>
-              }
-              colorClass="bg-white"
+                <div className="space-y-3">
+      <p>"To deliver high-quality, affordable, and easy-to-install products, enhancing everyday convenience and safety for society."</p>
+      <p>"To lead in Electrical & Sanitary Piping solutions by offering superior quality, innovation, and exceptional service."</p>
+      <p>"To foster growth for all stakeholders – Customers, Partners, Shareholders, Employees, and Society through trust and excellence."</p>
+    </div>
+            }
+             
             />
 
             <ValueCard

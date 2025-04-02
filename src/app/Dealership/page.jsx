@@ -2,6 +2,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import WhatsAppButton from "@/app/components/WhatsAppButton"
+
+
 import { 
   faShieldAlt, faStar, faLayerGroup, faBullhorn, 
   faChalkboardTeacher, faChartLine, faTags, faHandshake,
@@ -31,7 +35,7 @@ const FeatureCard = ({ icon, title, description, className = "" }) => (
 
 // Reusable Breadcrumb Component
 const Breadcrumb = ({ title, items }) => (
-  <div className="text-center h-150 py-20 bg-cover bg-center pt-30 mt-5" style={{ backgroundImage: "url('https://www.tmtplus.co.in/wp-content/uploads/2025/01/dealer-breadcrumb-1.jpg')" }}>
+  <div className="text-center h-150 py-20 bg-cover bg-center pt-30 " style={{ backgroundImage: "url('Images/Delership.jpg')" }}>
     <div className="container mx-auto px-4">
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 pt-40">{title}</h1>
       <nav className="flex justify-center">
@@ -216,8 +220,8 @@ const DealerBenefits = () => {
       <Breadcrumb
         title="Use industry-grade PVC solutions that meet the highest standards, ensuring durability and customer satisfaction."
         items={[
-          { label: "Home", link: "#" },
-          { label: "Dealership Benefits", link: "" }
+          { label: "Home", link: "/" },
+          { label: "Dealership Benefits", link: "/ContactUs" }
         ]}
       />
       
@@ -238,6 +242,8 @@ const DealerBenefits = () => {
       
       <USP />
       <Presence />
+      <WhatsAppButton />
+
     </>
   );
 };

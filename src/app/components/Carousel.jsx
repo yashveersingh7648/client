@@ -91,6 +91,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -99,21 +100,21 @@ const ImageCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: '/Images/Home_banner.jpg', // public folder में image
+      image: '/Images/Home.jpg', // public folder में image
       alt: 'Premium Products',
       title: 'High Quality Materials',
       description: 'Experience durability and excellence'
     },
     {
       id: 2,
-      image: '/Images/Home_banner.jpg',
+      image: '/Images/HomeBanner2.jpg',
       alt: 'Innovative Designs',
       title: 'Modern Solutions',
       description: 'Cutting-edge technology for your needs'
     },
     {
       id: 3,
-      image: '/Images/Home_banner.jpg',
+      image: '/Images/HomeBanner3.jpg',
       alt: 'Special Offers',
       title: 'Exclusive Deals',
       description: 'Limited time offers available now'
@@ -142,7 +143,7 @@ const ImageCarousel = () => {
   };
 
   return (
-    <div className="w-full relative h-[60vh] md:h-[80vh] overflow-hidden bg-gray-100 top-0">
+    <div className="w-full relative h-[40vh] md:h-[60vh] overflow-hidden bg-gray-100 top-25 mb-20">
       {/* Slides container */}
       <div 
         className="flex h-full transition-transform duration-700 ease-in-out"
@@ -155,7 +156,7 @@ const ImageCarousel = () => {
               src={slide.image}
               alt={slide.alt}
               fill
-              sizes="100vw"
+              sizes="80vw"
               className="object-cover"
               priority={slide.id === 1}
             />
@@ -163,15 +164,20 @@ const ImageCarousel = () => {
             {/* Text overlay */}
             <div className="relative inset-0 bg-black/30 flex items-center justify-center h-[60vh] md:h-[80vh] ">
               <div className="text-center px-4 max-w-4xl mx-auto text-white">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold mb-2">
                   {slide.title}
                 </h2>
                 <p className="text-lg md:text-xl mb-8">
                   {slide.description}
                 </p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-md md:text-lg font-semibold transition-colors">
+                {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-md md:text-lg font-semibold transition-colors">
                   View Products
-                </button>
+                </button> */}
+                <Link 
+                href="/Products" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-md md:text-lg font-semibold transition-colors">
+                View Products
+              </Link>
               </div>
             </div>
           </div>
