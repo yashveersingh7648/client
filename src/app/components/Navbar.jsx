@@ -12,12 +12,7 @@ const Navbar = () => {
   // Mobile menu state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Dropdown states
-  const [dropdowns, setDropdowns] = useState({
-    about: false,
-    products: false,
-    mobileAbout: false,
-    mobileProducts: false
-  });
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   // Initialize dark mode
   useEffect(() => {
@@ -37,18 +32,18 @@ const Navbar = () => {
   };
 
   // Handle dropdown toggle
-  const handleDropdown = (key) => {
-    setDropdowns(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
-  // Close mobile menu when clicking outside
+  // Close all dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isMobileMenuOpen && !event.target.closest('.mobile-menu-container')) {
         setIsMobileMenuOpen(false);
+      }
+      if (!event.target.closest('.dropdown-container')) {
+        setActiveDropdown(null);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -61,50 +56,18 @@ const Navbar = () => {
       label: "About",
       items: [
         { name: "About TMT Plus", link: "/AboutTMTPlus" },
-        // { name: "Our Management", link: "/management" },
         { name: "Our History", link: "/History" },
-        // { name: "Certification", link: "/certification" },
         { name: "Quality Policy", link: "/QualityPolicy" },
-        // { name: "Our Clients", link: "/clients" }
       ],
     },
-    // products: {
-    //   label: "Products",
-    //   categories: [
-    //     {
-    //       title: "Conduit Pipes",
-    //       image: "/images/conduit-pipes.jpg",
-    //       link: "/products/conduit-pipes"
-    //     },
-    //     {
-    //       title: "Water Tanks",
-    //       image: "/images/water-tanks.jpg",
-    //       link: "/products/water-tanks"
-    //     },
-    //     {
-    //       title: "Metal Boxes & Accessories",
-    //       image: "/images/metal-boxes.jpg",
-    //       link: "/products/metal-boxes"
-    //     },
-    //     {
-    //       title: "uPVC Pipes and Fittings",
-    //       image: "/images/upvc-pipes.jpg",
-    //       link: "/products/upvc-pipes"
-    //     },
-    //   ],
-    // },
-    Products: {
+    products: {
       label: "Products",
       items: [
         { name: "Conduit Pipes", link: "/Products#id1" },
-        // { name: "Our Management", link: "/management" },
-        { name: "Water Tanks",  link: "/Products#id6"  },
-        // { name: "Certification", link: "/certification" },
+        { name: "Water Tanks", link: "/Products#id6" },
         { name: "Casing & Capping", link: "/Products#id8" },
-        // { name: "Our Clients", link: "/clients" }
         { name: "Corrugated Pipes", link: "/Products#id12" },
         { name: "Metal Boxes & Accessories", link: "/Products#id9" },
-
       ],
     },
   };
@@ -178,26 +141,27 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              {/* About Dropdown */}
               <Link href="/" className="hover:text-blue-300 py-6">Home</Link>
 
-              <div className="relative group">
+              {/* About Dropdown */}
+              <div className="relative dropdown-container">
                 <button
-                  onClick={() => handleDropdown("about")}
+                  onClick={() => toggleDropdown("about")}
                   className="flex items-center space-x-1 hover:text-blue-300 py-6"
-                  aria-expanded={dropdowns.about}
+                  aria-expanded={activeDropdown === "about"}
                 >
                   <span>About</span>
-                  <FaChevronDown className={`transition-transform ${dropdowns.about ? "rotate-180" : ""}`} />
+                  <FaChevronDown className={`transition-transform ${activeDropdown === "about" ? "rotate-180" : ""}`} />
                 </button>
                 <div
-                  className={`absolute top-full left-0 w-48 bg-white dark:bg-gray-700 shadow-lg rounded-md py-2 z-50 ${dropdowns.about ? "block" : "hidden"}`}
+                  className={`absolute top-full left-0 w-48 bg-white dark:bg-gray-700 shadow-lg rounded-md py-2 z-50 ${activeDropdown === "about" ? "block" : "hidden"}`}
                 >
                   {menuItems.about.items.map((item, index) => (
                     <Link
                       key={index}
                       href={item.link}
                       className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       {item.name}
                     </Link>
@@ -205,67 +169,33 @@ const Navbar = () => {
                 </div>
               </div>
 
-
-              <div className="relative group">
+              {/* Products Dropdown */}
+              <div className="relative dropdown-container">
                 <button
-                  onClick={() => handleDropdown("products")}
+                  onClick={() => toggleDropdown("products")}
                   className="flex items-center space-x-1 hover:text-blue-300 py-6"
-                  aria-expanded={dropdowns.products}
+                  aria-expanded={activeDropdown === "products"}
                 >
                   <span>Products</span>
-                  <FaChevronDown className={`transition-transform ${dropdowns.products ? "rotate-180" : ""}`} />
+                  <FaChevronDown className={`transition-transform ${activeDropdown === "products" ? "rotate-180" : ""}`} />
                 </button>
                 <div
-                  className={`absolute top-full left-0 w-48 bg-white dark:bg-gray-700 shadow-lg rounded-md py-2 z-50 ${dropdowns.products ? "block" : "hidden"}`}
+                  className={`absolute top-full left-0 w-48 bg-white dark:bg-gray-700 shadow-lg rounded-md py-2 z-50 ${activeDropdown === "products" ? "block" : "hidden"}`}
                 >
-                  {menuItems.Products.items.map((item, index) => (
+                  {menuItems.products.items.map((item, index) => (
                     <Link
                       key={index}
                       href={item.link}
                       className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       {item.name}
                     </Link>
                   ))}
                 </div>
               </div>
-              {/* Products Mega Menu */}
-              {/* <div className="relative group">
-                <button
-                  onClick={() => handleDropdown("products")}
-                  className="flex items-center space-x-1 hover:text-blue-300 py-6"
-                  aria-expanded={dropdowns.products}
-                >
-                  <span>Products</span>
-                  <FaChevronDown className={`transition-transform ${dropdowns.products ? "rotate-180" : ""}`} />
-                </button>
-                <div
-                  className={`absolute top-full left-0 w-[600px] bg-white dark:bg-gray-700 shadow-lg rounded-md p-4 z-50 ${dropdowns.products ? "block" : "hidden"}`}
-                >
-                  <div className="grid grid-cols-2 gap-4">
-                    {menuItems.products.categories.map((category, index) => (
-                      <Link key={index} href={category.link} className="group">
-                        <div className="relative h-40 overflow-hidden rounded-lg">
-                          <Image
-                            src={category.image}
-                            alt={category.title}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                            sizes="(max-width: 768px) 100vw, 300px"
-                          />
-                          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <h3 className="text-white font-medium text-lg">{category.title}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div> */}
-              {/* <Link href="/Products" className="hover:text-blue-300 py-6">Products</Link> */}
 
               {/* Other Links */}
-              {/* <Link href="/gallery" className="hover:text-blue-300 py-6">Gallery</Link> */}
               <Link href="/Dealership" className="hover:text-blue-300 py-6">Become A Dealer</Link>
               <Link href="/ContactUs" className="hover:text-blue-300 py-6">Contact Us</Link>
             </nav>
@@ -288,23 +218,25 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4">
             {/* Mobile About Dropdown */}
             <div className="mb-4 border-b dark:border-gray-700 pb-2">
-              
               <button
-                onClick={() => handleDropdown("mobileAbout")}
+                onClick={() => toggleDropdown("mobileAbout")}
                 className="flex justify-between items-center w-full py-3 font-medium text-lg"
-                aria-expanded={dropdowns.mobileAbout}
+                aria-expanded={activeDropdown === "mobileAbout"}
               >
                 <span>About</span>
-                <FaChevronRight className={`transition-transform ${dropdowns.mobileAbout ? "rotate-90" : ""}`} />
+                <FaChevronRight className={`transition-transform ${activeDropdown === "mobileAbout" ? "rotate-90" : ""}`} />
               </button>
-              {dropdowns.mobileAbout && (
+              {activeDropdown === "mobileAbout" && (
                 <div className="pl-4 space-y-2 mt-2">
                   {menuItems.about.items.map((item, index) => (
                     <Link
                       key={index}
                       href={item.link}
                       className="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setActiveDropdown(null);
+                      }}
                     >
                       {item.name}
                     </Link>
@@ -316,23 +248,26 @@ const Navbar = () => {
             {/* Mobile Products Dropdown */}
             <div className="mb-4 border-b dark:border-gray-700 pb-2">
               <button
-                onClick={() => handleDropdown("mobileProducts")}
+                onClick={() => toggleDropdown("mobileProducts")}
                 className="flex justify-between items-center w-full py-3 font-medium text-lg"
-                aria-expanded={dropdowns.mobileProducts}
+                aria-expanded={activeDropdown === "mobileProducts"}
               >
                 <span>Products</span>
-                <FaChevronRight className={`transition-transform ${dropdowns.mobileProducts ? "rotate-90" : ""}`} />
+                <FaChevronRight className={`transition-transform ${activeDropdown === "mobileProducts" ? "rotate-90" : ""}`} />
               </button>
-              {dropdowns.mobileProducts && (
-                <div className="pl-4 space-y-3 mt-2">
-                  {menuItems.products.categories.map((category, index) => (
+              {activeDropdown === "mobileProducts" && (
+                <div className="pl-4 space-y-2 mt-2">
+                  {menuItems.products.items.map((item, index) => (
                     <Link
                       key={index}
-                      href={category.link}
+                      href={item.link}
                       className="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setActiveDropdown(null);
+                      }}
                     >
-                      {category.title}
+                      {item.name}
                     </Link>
                   ))}
                 </div>
@@ -340,19 +275,22 @@ const Navbar = () => {
             </div>
 
             {/* Other Mobile Links */}
-            {/* <Link href="/gallery" className="block py-3 border-b dark:border-gray-700 hover:text-blue-600 text-lg" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link> */}
-            <Link href="/Dealership" className="block py-3 border-b dark:border-gray-700 hover:text-blue-600 text-lg" onClick={() => setIsMobileMenuOpen(false)}>Become A Dealer</Link>
-            <Link href="/ContactUs" className="block py-3 border-b dark:border-gray-700 hover:text-blue-600 text-lg" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+            <Link href="/Dealership" className="block py-3 border-b dark:border-gray-700 hover:text-blue-600 text-lg" onClick={() => setIsMobileMenuOpen(false)}>
+              Become A Dealer
+            </Link>
+            <Link href="/ContactUs" className="block py-3 border-b dark:border-gray-700 hover:text-blue-600 text-lg" onClick={() => setIsMobileMenuOpen(false)}>
+              Contact Us
+            </Link>
             
             {/* Mobile Contact Info */}
             <div className="mt-6 space-y-3">
               <a href="mailto:contact@tmtplus.com" className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600">
                 <FaEnvelope />
-                <span>contact@tmtplus.com</span>
+                <span>info@finetmtplus.com</span>
               </a>
-              <a href="tel:+911234567890" className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600">
+              <a href="tel:+918447490707" className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600">
                 <FaPhone />
-                <span>+91 12345 67890</span>
+                <span>+91 8447490707</span>
               </a>
             </div>
 

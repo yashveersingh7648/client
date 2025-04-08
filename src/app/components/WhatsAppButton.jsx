@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "+918882171554"; 
+    const phoneNumber = "918882171554"; // Country code ke saath without + or 0
     const message = "Hello, I am interested in your services!";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
       whileTap={{ scale: 0.9 }} // Click par chhota hoga
       className="fixed bottom-4 right-4 z-50 cursor-pointer mb-20 "
     >
-      <Image src="/Images/Newwhatshap.png" width={64} height={64} alt="WhatsApp" />
+      <Image src="/Images/Newwhatshap.png" width={64} height={64} alt="WhatsApp"  onClick={handleWhatsAppClick}/>
     </motion.div>
   );
 };
