@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -192,6 +192,24 @@ const products1 = [
     document.documentElement.classList.toggle('dark');
   };
 
+
+     const location = useLocation();
+  
+      useEffect(() => {
+          // Scroll to the element when hash changes
+          if (location.hash) {
+              const element = document.getElementById(location.hash.substring(1));
+              if (element) {
+                  // Add slight delay to ensure DOM is fully loaded
+                  setTimeout(() => {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+              }
+          } else {
+              // Scroll to top if no hash
+              window.scrollTo(0, 0);
+          }
+      }, [location]);
   return (
     <>
       <WhatsAppButton />
@@ -277,7 +295,7 @@ const products1 = [
               <span className="decorative-line1"></span>
 
           </h2>
-          <div className="product-grid">
+          <div className="product-grid" >
             {Conduit.map((product, index) => (
               <div key={index} className="product-card">
                 <div className="product-image-container">
@@ -304,7 +322,7 @@ const products1 = [
               <span className="decorative-line1"></span>
 
           </h2>
-          <div className="product-grid">
+          <div className="product-grid" >
             {Metal.map((product, index) => (
               <div key={index} className="product-card">
                 <div className="product-image-container">
@@ -331,7 +349,7 @@ const products1 = [
               <span className="decorative-line1"></span>
 
           </h2>
-          <div className="product-grid1">
+          <div className="product-grid1" >
             {uPVC.map((product, index) => (
               <div key={index} className="product-card">
                 <div className="product-image-container">
@@ -370,7 +388,7 @@ const products1 = [
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
-                <div className="product-details2">
+                <div className="product-details2" >
                   <h3>{product.title}</h3>
                   <p>{product.description}</p>
                 </div>
@@ -385,7 +403,7 @@ const products1 = [
               <span className="decorative-line1"></span>
 
           </h2>
-          <div className="product-grid2">
+          <div className="product-grid2" >
             {Corrugated.map((product, index) => (
               <div key={index} className="product-card">
                 <div className="product-image-container">

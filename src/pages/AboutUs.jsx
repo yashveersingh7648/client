@@ -57,7 +57,7 @@ const CompanyValues = () => {
                   className="about-image"
                 />
               </div>
-              <div className="image-container">
+              <div className="image-container mt-offset">
                 <img
                   src="/Images/Tmt2.jpeg"
                   alt="TMT Plus quality products"

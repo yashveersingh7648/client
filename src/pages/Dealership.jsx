@@ -363,20 +363,20 @@ const Presence = () => {
 // Main Component
 const DealerBenefits = () => {
   const benefits = [
-    { icon: faShieldAlt, title: "Reputation precedes brand", description: "TMT Plus has a history since the 1960s of quality." },
-    { icon: faStar, title: "Quality Products", description: "High-quality uPVC pipes and tanks." },
-    { icon: faLayerGroup, title: "Product Range", description: "Diverse range of uPVC products." },
-    { icon: faBullhorn, title: "Marketing Support", description: "Promotional and advertising support." },
-    { icon: faChalkboardTeacher, title: "Training Support", description: "Technical training for dealers." },
-    { icon: faChartLine, title: "Growth Opportunities", description: "Expand in a growing industry." },
-    { icon: faTags, title: "Competitive Pricing", description: "Favorable pricing for dealers." },
-    { icon: faHandshake, title: "Long-term Partnership", description: "Mutually beneficial relationships." },
+    { icon: faShieldAlt, title: "Reputation precedes brand", description: "TMT Plus has a history dating back to the 1960's, with six decades of manufacturing high-quality products." },
+    { icon: faStar, title: "Quality Products", description: "Credible experience in producing high-quality uPVC pipes and tanks." },
+    { icon: faLayerGroup, title: "Product Range", description: "Diverse range of uPVC products to cater to all customer needs." },
+    { icon: faBullhorn, title: "Marketing Support", description: "Promotional materials and advertising assistance provided." },
+    { icon: faChalkboardTeacher, title: "Training Support", description: "Technical training to help dealers understand our products better." },
+    { icon: faChartLine, title: "Growth Opportunities", description: "Tap into a growing industry and expand your business." },
+    { icon: faTags, title: "Competitive Pricing", description: "Favorable pricing and terms for our dealers." },
+    { icon: faHandshake, title: "Long-term Partnership", description: "Build a mutually beneficial, lasting relationship." },
   ];
 
   return (
     <>
       <Breadcrumb
-        title="Use industry-grade PVC solutions that meet the highest standards"
+        title="Use industry-grade PVC solutions that meet the highest standards, ensuring durability and customer satisfaction."
         items={[{ label: "Home", link: "/" }, { label: "Dealership Benefits" }]}
       />
       <section className="section-gray">
