@@ -338,7 +338,7 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { FaBars, FaTimes, FaHome, FaInfoCircle, FaCogs, FaEnvelope, FaAngleDown, FaHandshake, FaBoxOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '/Images/logo.png'; // Replace with your logo path
@@ -354,6 +354,15 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+
+   useEffect(() => {
+        if (location.hash) {
+          const element = document.querySelector(location.hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, [location]);
   return (
     <header className="navbar">
       <div className="container">

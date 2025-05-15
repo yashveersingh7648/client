@@ -1563,7 +1563,10 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   flex: 1 1 450px;
 }
-
+.contact-info1 .info-item svg{
+  font-size: 3rem !important;
+  padding-top: 0rem;
+}
 .contact-info1 h3,
 .contact-form h3 {
   font-size: 28px;
@@ -3380,7 +3383,7 @@ html {
   }
 
   .faq-answer-content {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
