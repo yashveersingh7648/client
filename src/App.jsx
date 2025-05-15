@@ -22,6 +22,8 @@ const WhatsAppButton = lazy(() => import("./components/WhatsAppButton"));
 const Card = lazy(() => import("./components/card"));
 const Button = lazy(() => import("./components/button"));
 
+const NotFound = lazy(() => import("./pages/NotFound"));
+
 
 const ConduitPipesPage = lazy(() => import("./pages/ConduitPipesPage"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
@@ -74,6 +76,8 @@ const App = () => {
         <Route path="/Products" element={<Products />} /> 
         <Route path="/QualityPolicy" element={<QualityPolicy />} /> 
 
+
+ <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
